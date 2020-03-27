@@ -10,8 +10,10 @@ body, html {
 }
 
 body {
-  background:linear-gradient(to right,rgba(255,255,255,.8), rgba(255,255,255,.2)), url(./images/fresh-veggies.jpg);
-  /*background-color: #f5f4f2;*/
+  background:linear-gradient(to right,rgba(255,255,255,.6), rgba(255,255,255,.4)), url(./images/notebook.jpg);
+  background-repeat:no-repeat;
+  /*background-size:contain;*/
+  background-position:center;
   padding: 20px;
   font-family: "ProximaNova Regular";
 }
@@ -25,7 +27,7 @@ h1 {
 }
 
 .col-12 {
-  background: rgba(175, 166, 150, 0.7);
+  background: rgba(108, 117, 125, 0.4);
   padding: 10px;
 }
 
