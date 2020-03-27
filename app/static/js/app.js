@@ -29,7 +29,7 @@ function addNewRecipeGroupPrompt () {
   console.log('newRecipeGroupInputLower:', newRecipeGroupInputLower)
   console.log('existingSheetNames:', existingSheetNames)
   // check if the recipe group name already exists in the spreadhseet
-  const existingSheetNamesLower = existingSheetNames.map(item => item.toLowerCase())
+  const existingSheetNamesLower = existingSheetNames.map(item => item.toString().toLowerCase())
   if (existingSheetNamesLower.includes(newRecipeGroupInputLower)) {
     alert('The recipe group already exists in the database. Please enter a different name.')
     return
@@ -80,7 +80,7 @@ function addNewIngredientPrompt () {
   const newIngredientInputLower = newIngredientInputTrim.toLowerCase()
   console.log('newIngredientInputLower:', newIngredientInputLower)
   // check if the ingredient name already exists in the spreadhseet
-  const validationIngredientsListLower = validationIngredientsList.map(item => item.toLowerCase())
+  const validationIngredientsListLower = validationIngredientsList.map(item => item.toString().toLowerCase())
   console.log('validationListLower:', validationIngredientsListLower)
   if (validationIngredientsListLower.includes(newIngredientInputLower)) {
     alert('This ingredient already exists in the database. Please enter new ingredient name or select one from the dropdown menu.')
@@ -100,7 +100,7 @@ function addNewIngredientPrompt () {
     if (httpRequest.readyState === XMLHttpRequest.DONE) {
       if (httpRequest.status === 200) {
         alert(`Please note that the new ingredient '${newIngredientInputTrim}' has been entered in the database at $0.00 cost. The final recipe cost may vary.`)
-        validationIngredientsList.push(newIngredientInputLower) // adding to the list for validation
+        validationIngredientsList.push(newIngredientInputTrim) // adding to the list for validation
         console.log('after adding ingredient:', validationIngredientsList)
         // if the request was successful, so we need to insert the option into the ingredient list here
         const ingredientOptionsList = document.getElementById('ingredient-list')
