@@ -1,0 +1,156 @@
+*{
+  font-family: "ProximaNova Regular";
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+body {
+  background:linear-gradient(to right,rgba(255,255,255,.7), rgba(255,255,255,.2)), url(./images/rosemary-board.jpg);
+  /*background-color: #f5f4f2;*/
+  padding: 20px;
+  font-family: "ProximaNova Regular";
+}
+
+h1 {
+  font-family: 'ProximaNova-Regular';
+  color: #000000;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.col-12 {
+  background: rgba(175, 166, 150, 0.7);
+  padding: 10px;
+}
+
+label {
+    display: inline-block;
+    /*flex-direction: row;*/
+    /*justify-content: flex-end;*/
+    text-align: right;
+    font-size: 17px;
+    width: 210px;
+    line-height: 26px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.ingredient-row label {
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+}
+
+button span {
+  padding-left: 10px;
+}
+
+/*Buttons  transition on hover*/
+.buttons {
+  background-color:rgba(255,255,255,0.7);
+  color: black;
+  transition: 0.3s;
+}
+
+.buttons:hover {
+  background-color: #000000;
+  color: white;
+}
+
+/*fixes the width of the select fields */
+select#recipe-group {
+  width: 100%;
+  text-align: center;
+}
+
+select#units {
+  width: 100%;
+  text-align: center;
+}
+
+select#yield-units {
+  width: 100%;
+  text-align: center;
+}
+
+/* only show labels on the first row */
+.ingredient-row label {
+  display: none;
+}
+
+.ingredient-row:first-of-type label {
+  display: inline-block;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-container button {
+  margin: 0px 10px;
+}
+
+/*spacing between input fields */
+.form-group {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+#submit-btn span {
+  display: none;
+}
+#submit-btn.loading span {
+  display: inline-block;
+}
+
+/* BOOTSRTAP ALERT */
+.alert-custom {
+  background-color: rgba(120, 180, 90,0.8);
+  color: #000000;
+}
+
+
+/* ============================= MEDIA QUERIES ================================*/
+
+/* center labels for .form-group when on mobibe device */
+@media (max-width: 767px){
+  label {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+/*show labels for .ingredient-row when on mobile device */
+@media (max-width: 767px){
+  .ingredient-row label {
+    display: inline-block;
+  }
+}
+
+/* align the remove button when on a mobile */
+@media (max-width: 767px){
+  .remove-button-div {
+    text-align: center;
+  }
+}
+
+@media (max-width: 767px){
+  .create-group-button-div {
+    text-align: center;
+    padding-top: 20px;
+  }
+}
+
+/* aling the create-new-group button inline with the input field on the mobile device */
+/* from https://caniuse.com/#feat=css-display-contents */
+@media (min-width:767px) and (max-width:915px) {
+  .create-group-button-div {
+    display:contents;
+  }
+}

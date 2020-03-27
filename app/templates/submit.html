@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <h1>Submit New Recipe</h1>
+    <div class="ingredient-row" style="display:none">
+        <div class="form-group row">
+            <div class="col-md-3 col-lg-auto col-xl-auto">
+                <label for="ingredient" class="text-inline">Ingredient</label>
+                <input type="text" class="ingredient form-control" list="ingredient-list" name="ingredient"
+                    required="required" oninput="validateIngredientName(event)">
+            </div>
+            <div class="col-md-2 col-lg-2 col-xl-2">
+                <label for="recipe-qty">Recipe QTY</label>
+                <input type="number" class="form-control" name="recipe-qty" required="required" min="0">
+            </div>
+            <div class="col-md-auto col-lg-auto col-xl-auto">
+                <label for="units">Units</label>
+                <select class="form-control" name="units" id="units" required="required">
+                    <option value="">--Please choose an option--</option>
+                    {% for recipe_unit in recipe_units %}
+                    <option value="{{ recipe_unit }}">{{ recipe_unit }}</option>
+                    {% endfor %}
+                </select><br>
+            </div>
+            <div class="col-md-2 col-lg-2 col-xl-2">
+                <label for="notes">Ingredient Notes</label>
+                <input type="text" class="form-control" name="notes">
+            </div>
+            <div class="col-md-1 col-lg-1 col-xl-1 remove-button-div">
+                <label>&nbsp;</label>
+                <button class="remove-button btn btn-secondary buttons" type="button"><i
+                        class="fas fa-trash"></i></button>
+            </div>
+        </div>
+    </div>
+    <form class="col-12" id="myform" action="/submit" method="post" name="form">
+        <div class="form-group row">
+            <label id="Date" for="date">Date</label>
+            <div class="col-md-4 col-lg-4 col-xl-3">
+                <input type="date" id="date" class="form-control" name="date" required="required">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="recipe-group">Recipe Group</label>
+            <div class="col-md-4 col-lg-4 col-xl-3 ">
+                <select class="form-control" name="recipe-group" id="recipe-group" required="required">
+                    <option value="">--Please choose an option--</option>
+                    {% for existing_sheet_names in existing_sheet_names %}
+                    <option value="{{ existing_sheet_names }}">{{ existing_sheet_names }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-5 col-lg-5 col-xl-3 create-group-button-div">
+                <button id="create-new-group" class="create-group-btn btn btn-secondary buttons" type="button"><i
+                        class="fas fa-layer-group"></i><span>Create New Group in Database</span></button>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="name">Recipe Name</label>
+            <div class="col-md-4  col-lg-4 col-xl-3">
+                <input type="text" id="recipe-name" class="form-control" name="recipe-name" required="required"
+                    oninput="validateRecipeName()">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="yield-qty">Total Recipe Yield QTY</label>
+            <div class="col-md-4 col-lg-4 col-xl-3">
+                <input type="number" id="yield-qty" class="form-control" name="yield-qty" required="required" min="0">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="yield-units">Yield Units</label>
+            <div class="col-md-4  col-lg-4 col-xl-3">
+                <select class="form-control" name="yield-units" id="yield-units" required="required">
+                    <option value="">--Please choose an option--</option>
+                    {% for yield_unit in yield_units %}
+                    <option value="{{ yield_unit }}">{{ yield_unit }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div id="dynamic-rows">
+        </div>
+        <div class="form-group btn-container">
+            <button id="add-ingredient" class="add-btn btn btn-secondary mb-2 buttons" type="button"><i
+                    class="fas fa-plus-square"></i><span>Add Ingredient</span></button>
+            <button id="create-new-ingredient" class="create-ingredient-btn btn btn-secondary mb-2 buttons"
+                type="button"><i class="fas fa-file"></i><span>Create New Ingredient In Database</span></button>
+        </div>
+        <div class="form-group btn-container">
+            <button id="submit-btn" class="submit-btn btn btn-dark buttons" type="submit">
+                Submit
+                <span class="spinner-border spinner-border-sm"></span>
+            </button>
+        </div>
+    </form>
+
+</div>
+<datalist id="ingredient-list">
+    {% for category in ingredients %}
+    {% for ingredient in ingredients[category] %}
+    <option>{{ ingredient }}</option>
+    {% endfor %}
+    {% endfor %}
+</datalist>
+<!--These lists are used as validation for the javasript event handlers "Add New Ingredient to Database" and "Add New Recipe Group to Databse"-->
+<script>
+    var existingSheetNames = {{ existing_sheet_names| safe }}
+    var validationIngredientsList = {{ ingredients_list| safe }}
+</script>
+{% endblock %}
