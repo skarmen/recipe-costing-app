@@ -9,14 +9,14 @@
 
 # Recipe Costing App
 
-A web app which takes user's input and generates recipe costing sheets in Google Sheets. The app renders selected information from the Google Sheets (e.g ingredients, recipe groups, units). 
-This repository has a ready-to-copy-paste google sheet template that you need in order to run the application. 
+A web app which takes user's input and generates recipe costing sheets in Google Sheets. The app renders selected information from the Google Sheets (e.g ingredients, recipe groups, units). This repository has a ready-to-copy-paste google sheet template that you need in order to run the application. 
+Currenlty the app is compatible only with Google Chrome. 
 
 # Motivation 
 
 # Demo 
 Demo
-Download demo here
+Download demo ![Recipe Costing App Demo](demo/app-demo.gif)
 
 Screnshots availabe here
 # Built with
@@ -87,9 +87,9 @@ To programatically access your spreadsheet, you will need to create a service ac
  
 With all credentials in place, there is one last step to set up your google sheet with the app. 
 
-**II. HTTP Authentication** 
+**III. HTTP Authentication** 
 
-You can grant access to the web application by updating the username and password in the ***.env** file. This is only basic HTTP through Flask. 
+You can grant access to the web application by updating the username and password in the ***.env** file. This is only basic HTTP auth with Flask. 
   1. From the repository open ***.env** 
   2. Update the username and password credentials 
   ```
