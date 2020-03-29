@@ -10,6 +10,7 @@ __pycache__
 client_secret.json
 client_secret_public.json
 .env
+Profile
 node_modules
 
 TO_DO.txt
