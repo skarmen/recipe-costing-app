@@ -8,6 +8,8 @@ __pycache__
 .flaskenv
 .vscode
 client_secret.json
+client_secret_public.json
+.env
 node_modules
 
 TO_DO.txt
