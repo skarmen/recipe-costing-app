@@ -7,7 +7,7 @@ from datetime import datetime, date
 import threading
 # import ipdb;ipdb.set_trace()
 
-SHEET_NAME = "recipe-costing-template"
+SHEET_NAME = "Karmen's Recipe Costing"
 
 def get_client(sheet_name=SHEET_NAME):
     """
