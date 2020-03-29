@@ -16,7 +16,7 @@ Currenlty the app is compatible only with Google Chrome.
 
 # Demo 
 Demo
-Download demo here
+Download demo [here](https://imgflip.com/gif/3uitbi)
 
 Screnshots availabe here
 # Built with
