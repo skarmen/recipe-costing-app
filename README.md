@@ -16,7 +16,7 @@ Currenlty the app is compatible only with Google Chrome.
 
 # Demo 
 Demo
-Download demo ![Recipe Costing App Demo](demo/app-demo-faster.gif)
+Download demo ![Recipe Costing App Demo](demo/app-demo-fast.gif)
 
 Screnshots availabe here
 # Built with
