@@ -13,7 +13,7 @@ Currently the app is compatible only with Google Chrome.
 
 # Motivation
 After I graduated from Udacity's Intro to Programming Nanodegree I decided to practice my newly acquired skills by building something simple and useful that can automate some of the most repetitive tasks at my job. This is how I came up with the idea to automate the recipe costing process with an existing Google Sheets database.
-I am thrilled that my first made from scratch project is already deployed and used by my co-workers.
+I am thrilled that my first made-from-scratch project is already deployed and used by my co-workers.
 
 # Demo
 ![Recipe Costing App Demo](demo/app-demo-fast.gif)
