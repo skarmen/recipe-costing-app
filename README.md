@@ -7,18 +7,18 @@
 * [Installation](#installation)
 * [Setup](#setup)
 
-# Recipe Costing App
+## Recipe Costing App
 A web app that takes the user's input and generates recipe costing sheets in Google Sheets. The app renders selected information from the Google Sheets (e.g ingredients, recipe groups, units). This repository has a ready-to-copy-paste google sheet template that you need to run the application.
 Currently the app is compatible only with Google Chrome.
 
-# Motivation
+## Motivation
 After I graduated from Udacity's Intro to Programming Nanodegree I decided to practice my newly acquired skills by building something simple and useful that can automate some of the most repetitive tasks at my job. This is how I came up with the idea to automate the recipe costing process with an existing Google Sheets database.
 I am thrilled that my first made-from-scratch project is already deployed and used by my co-workers.
 
-# Demo
+## Demo
 ![Recipe Costing App Demo](demo/app-demo-fast.gif)
 
-# Built with
+## Built with
   - Python
   - JavaScript
   - Flask
@@ -27,7 +27,7 @@ I am thrilled that my first made-from-scratch project is already deployed and us
   - CSS
   - Bootstrap
 
-# Features
+## Features
 This application makes it easy to:
   - Efficiently cost recipes
   - Generate Google Sheets with the provided templates and create a more organized and consistent database for your costing needs
@@ -36,7 +36,7 @@ This application makes it easy to:
   - Restrict access to specific users with the authentication feature
 
 
-# Installation & Usage
+## Installation & Usage
  **To Install**
 
 ```$ git clone https://github.com/skarmen/recipe-costing-app/```
@@ -47,7 +47,7 @@ $ cd recipe-costing-app
 $ python3 wsgi.py
 ```
 
-# Setup
+## Setup
 
 **I. Set up your Google Sheet**
 
